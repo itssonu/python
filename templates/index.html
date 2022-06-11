@@ -5,7 +5,9 @@
     <div class="content">
         {% for student in students %}
             <div class="student">
-                <p><b>#{{ student.id }}</b></p>
+                <p><b>#{{ student.id }}</b>
+                <a href="{{url_for('edit',student_id=student.id)}}">Edit</a>
+                <a href="{{url_for('delete',student_id=student.id)}}">Delete</a></p>
                 <b>
                     <p class="name">
                         <a href="{{ url_for('student', student_id=student.id)}}">
